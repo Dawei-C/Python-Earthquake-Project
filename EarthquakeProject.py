@@ -29,8 +29,11 @@ with open(fn) as csvfile:
     for i in noInformation:
         print(i + "'s magnitude has not been disclosed yet.")
 
+    # create a list by zipping place and magnitude together
     placeMag = list(zip(placeList, magnitudeList))
     placeMag = sorted(placeMag, key=itemgetter(1))
+
+    # last index of the sorted list (highest value)
     topMag = placeMag[-1]
     averageMag = sum(magnitudeList)/len(magnitudeList)
     totalEQ = len(magnitudeList)
